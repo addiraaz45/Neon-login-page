@@ -1,46 +1,54 @@
-
-
+/* Reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-body{
+
+/* Full-page styling */
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-   background:#000;
+    background: #000;
 }
+
+/* Wrapper for login form */
 .wrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 400px;
-    height: 500px;
+    padding: 20px;
     background: transparent;
     border: 5px solid #333;
     border-radius: 10px;
     transition: .5s;
-
 }
 
+/* Neon border effect */
 .wrapper:hover {
     border: 5px solid #0ef;
-    box-shadow: 0 0 20px #0ef, insert 0 0 20px #0ef;
+    box-shadow: 0 0 20px #0ef, inset 0 0 20px #0ef;
 }
-h2{
+
+/* Heading styles */
+h2 {
     font-size: 2em;
     text-align: center;
     color: #fff;
     transition: .5s;
 }
+
 .wrapper:hover h2 {
     color: #0ef;
 }
 
+/* Input field styles */
 .input-box {
     position: relative;
     width: 320px;
@@ -62,13 +70,15 @@ h2{
 
 .wrapper:hover .input-box input {
     border: 2px solid #0ef;
-    box-shadow: 0 0 10px #0ef, insert 0 0 10px #0ef;
+    box-shadow: 0 0 10px #0ef, inset 0 0 10px #0ef;
 }
 
+/* Placeholder color */
 .input-box input::placeholder {
-    color: rgba(255, 255, 255,.3);
+    color: rgba(255, 255, 255, .3);
 }
 
+/* Input field icons */
 .input-box .icon {
     position: absolute;
     left: 10px;
@@ -82,7 +92,7 @@ h2{
     color: #0ef;
 }
 
-
+/* Forgot password link */
 .forget-pass {
     margin: -15px 0 15px;
 }
@@ -90,13 +100,15 @@ h2{
 .forget-pass a {
     color: #fff;
     text-decoration: none;
-
+    transition: .3s;
 }
 
 .forget-pass a:hover {
     text-decoration: underline;
+    color: #0ef;
 }
 
+/* Button styling */
 button {
     position: relative;
     width: 100%;
@@ -116,22 +128,21 @@ button {
     background: #0ef;
     color: #000;
     box-shadow: 0 0 20px #0ef;
-
+    transform: scale(1.05);
 }
 
+/* Register link */
 .register-link {
     font-size: .9em;
     text-align: center;
     margin: 25px 0;
-
 }
 
 .register-link p {
     color: #fff;
-
 }
 
-.register-link p a{
+.register-link p a {
     color: #333;
     text-decoration: none;
     font-weight: 600;
@@ -144,4 +155,16 @@ button {
 
 .register-link p a:hover {
     text-decoration: underline;
+}
+
+/* Smooth animations */
+@keyframes neon-glow {
+    0% { box-shadow: 0 0 5px #0ef; }
+    50% { box-shadow: 0 0 20px #0ef; }
+    100% { box-shadow: 0 0 5px #0ef; }
+}
+
+/* Applying neon animation */
+.wrapper:hover {
+    animation: neon-glow 1.5s infinite alternate;
 }
